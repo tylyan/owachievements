@@ -1,0 +1,22 @@
+extends ./layout.pug
+block content
+  h1 Achievements for #{battletag}
+  h2 Progress: #{data.finishedAchievements}
+  ul.achievements-list
+    each achievement in data.achievements
+      - var complete = "incomplete"
+      if achievement.finished == true
+        - complete = "complete"
+      li.achievement-item(class=complete)
+        img(src=achievement.image, alt=achievement.name)
+        h2 #{achievement.name}
+        p #{achievement.description}
+        p Category: #{achievement.category}
+      //.row
+      //  .col-sm-6.col-md-4
+      //    .thumbnail(class=complete)
+      //      img(src=achievement.image,alt=achievement.name)
+      //      .caption
+      //        h3 #{achievement.name}
+      //        p #{achievement.description}
+          

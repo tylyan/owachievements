@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1 Enter BattleTag
+  form(action='/achievements',method='post')
+    input(type='text',name='battletag',id='battletag')
+    input(type='submit',value='Search')
